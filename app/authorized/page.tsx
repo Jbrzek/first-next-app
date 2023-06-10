@@ -4,15 +4,14 @@ import { redirect } from "next/navigation";
 
 export default async function LoginPage() {
   const supabase = createServerComponentClient({ cookies });
-
   const {
     data: { session },
   } = await supabase.auth.getSession();
 
-  //If user is signed in redirect to /authorized
-  if (session) {
-    redirect("/authorized");
+  //If user is signed out redirect to /
+  if (!session) {
+    redirect("/");
   }
 
-  return <h1>Hello, please sign in to see content!!!</h1>;
+  return <h1>Hello, {session.user.email}</h1>;
 }
