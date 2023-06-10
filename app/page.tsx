@@ -14,5 +14,7 @@ export default async function LoginPage() {
     redirect("/authorized");
   }
 
-  return <h1>Hello, please sign in to see content!!!</h1>;
+  return (
+    <h1 className="text-center m-2">Hello, please sign in to see content!!!</h1>
+  );
 }

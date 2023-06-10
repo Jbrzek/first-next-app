@@ -3,7 +3,7 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 
-export default async function Logout() {
+export default function Logout() {
   const supabase = createClientComponentClient();
   const router = useRouter();
 
@@ -13,7 +13,7 @@ export default async function Logout() {
   };
 
   return (
-    <div>
+    <div id="form">
       <button onClick={handleSignOut}>Sign out</button>
     </div>
   );

@@ -32,17 +32,15 @@ export default function Login() {
   };
 
   return (
-    <>
+    <div id="form">
       <label htmlFor="email">Your email:</label>
       <input
-        className="m-10 text-black"
         name="email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       />
       <label htmlFor="password">Your password:</label>
       <input
-        className="m-10 text-black"
         type="password"
         name="password"
         onChange={(e) => setPassword(e.target.value)}
@@ -54,6 +52,6 @@ export default function Login() {
       <button onClick={handleSignIn} className="m-10">
         Sign in
       </button>
-    </>
+    </div>
   );
 }

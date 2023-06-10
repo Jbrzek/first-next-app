@@ -22,6 +22,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div id="bg-left"></div>
         {session ? (
           //If user is signed in show logout button
           <Logout />
@@ -30,6 +31,7 @@ export default async function RootLayout({
           <Login />
         )}
         {children}
+        <div id="bg-right"></div>
       </body>
     </html>
   );

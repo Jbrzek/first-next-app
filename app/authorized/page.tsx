@@ -13,5 +13,9 @@ export default async function LoginPage() {
     redirect("/");
   }
 
-  return <h1>Hello, {session.user.email}</h1>;
+  return (
+    <div id="auth">
+      <h1>Hello, {session.user.email}</h1>
+    </div>
+  );
 }

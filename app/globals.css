@@ -2,26 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  background-color: #f8fceb;
+  color: #333c4a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input {
+  border: 2px solid #333c4a;;
+  border-radius: 8px;
+  text-align: center;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input, label {
+  margin: 2px;
+}
+
+#form {
+  text-align: center;
+  margin: 2px;
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0);
+  width: 17em
+}
+
+#bg-right {
+  background-color: #495664;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 70%;
+  right: 0;
+  z-index: -1;
+}
+
+#bg-left {
+  background-color: #495664;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 70%;
+  z-index: -1;
+}
+
+#auth{
+  text-align: center;
+  margin: 0;
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0);
+  width: 17em
 }
