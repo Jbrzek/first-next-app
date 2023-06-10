@@ -13,9 +13,18 @@ export default async function LoginPage() {
     redirect("/");
   }
 
+  const { data: contents } = await supabase.from("content").select();
+
   return (
     <div id="auth">
       <h1>Hello, {session.user.email}</h1>
+      {contents?.map((content) => (
+        <div id="content">
+          <p className="text-red-950">{content.title}</p>
+          <p>{content.description}</p>
+          <p className="text-red-900">{content.bonus}</p>
+        </div>
+      ))}
     </div>
   );
 }
