@@ -1,11 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/dist/client/components/headers";
 import Login from "./login";
 import Logout from "./logout";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "My first NEXT JS app",
@@ -24,7 +21,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         {session ? (
           //If user is signed in show logout button
           <Logout />
