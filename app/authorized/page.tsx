@@ -1,6 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/dist/client/components/headers";
 import { redirect } from "next/navigation";
+import Content from "./content";
 
 export default async function LoginPage() {
   const supabase = createServerComponentClient({ cookies });
@@ -23,7 +24,7 @@ export default async function LoginPage() {
 
   return (
     <div id="auth">
-      <h1>
+      <h1 className="m-4">
         Hello,&nbsp;
         {
           //Check if user added his info and show it. Else show his email
@@ -38,6 +39,9 @@ export default async function LoginPage() {
           )
         }
       </h1>
+
+      <Content />
+
       {contents?.map((content) => (
         <div id="content">
           <p className="text-red-950">{content.title}</p>
