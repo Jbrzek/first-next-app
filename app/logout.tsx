@@ -12,9 +12,25 @@ export default function Logout() {
     router.refresh();
   };
 
+  const handleAccount = async () => {
+    router.push("/authorized/account");
+  };
+
+  const handleMain = async () => {
+    router.push("/authorized");
+  };
+
   return (
     <div id="form">
-      <button onClick={handleSignOut}>Sign out</button>
+      <button onClick={handleSignOut} className="p-3">
+        Sign out
+      </button>
+      <button onClick={handleAccount} className="p-3">
+        Account
+      </button>
+      <button onClick={handleMain} className="p-3">
+        Main page
+      </button>
     </div>
   );
 }
